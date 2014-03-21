@@ -8,16 +8,16 @@ class scout_realtime (
 ) {
 
   if $use_ruby191 {
-    package { 'scout_realtime':
-      ensure   => $version,
-      provider => 'gem',
-    }
-  }
-  else {
     exec { 'scout_realtime':
       command => 'gem1.9.1 install scout_realtime',
       unless  => "gem1.9.1 list --local | grep scout_realtime | grep ${version}",
       path    => ['/usr/local/bin', '/usr/bin', '/usr/sbin', '/bin', '/sbin'],
+    }
+  }
+  else {
+    package { 'scout_realtime':
+      ensure   => $version,
+      provider => 'gem',
     }
   }
 
