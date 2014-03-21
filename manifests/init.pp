@@ -21,18 +21,21 @@ class scout_realtime (
     }
   }
 
-  -> 
-
   file { '/etc/init/scout_realtime.conf':
     ensure  => present,
     content => template('scout_realtime/upstart.erb'),
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-  } ->
+  }
 
+  $require_scout = $use_ruby191 ? {
+    true    => Exec['scout_realtime'],
+    default => Package['scout_realtime'],
+  }
   service { 'scout_realtime':
     ensure  => running,
+    require => $require_scout,
   }
 
 }
