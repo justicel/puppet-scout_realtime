@@ -19,7 +19,9 @@ class scout_realtime (
       unless  => "gem1.9.1 list --local | grep scout_realtime | grep ${version}",
       path    => ['/usr/local/bin', '/usr/bin', '/usr/sbin', '/bin', '/sbin'],
     }
-  } ->
+  }
+
+  -> 
 
   file { '/etc/init/scout_realtime.conf':
     ensure  => present,
