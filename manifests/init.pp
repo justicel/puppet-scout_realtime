@@ -35,7 +35,7 @@ class scout_realtime (
   }
   service { 'scout_realtime':
     ensure  => running,
-    require => $require_scout,
+    require => [ $require_scout, File['/etc/init/scout_realtime.conf'], ],
   }
 
 }
