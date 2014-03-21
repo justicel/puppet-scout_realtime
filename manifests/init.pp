@@ -1,7 +1,8 @@
+#Basic puppet module to install scout-realtime monitor
 class scout_realtime (
-  $port     = '5555'
-  $log_path = '/var/log/scout_realtime.log'
-  $pid_path = '/var/run/scout_realtime.pid'
+  $port     = '5555',
+  $log_path = '/var/log/scout_realtime.log',
+  $pid_path = '/var/run/scout_realtime.pid',
 ) {
 
   package { 'scout_realtime':
