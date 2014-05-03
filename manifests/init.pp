@@ -4,7 +4,7 @@ class scout_realtime (
   $log_path    = '/var/log/scout_realtime.log',
   $pid_path    = '/var/run/scout_realtime.pid',
   $use_ruby191 = false,
-  $version     = '1.0.3',
+  $version     = '1.0.4',
 ) {
 
   if $use_ruby191 {
