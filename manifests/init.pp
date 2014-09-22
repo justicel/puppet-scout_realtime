@@ -77,8 +77,7 @@ class scout_realtime (
     ensure_packages('scout_realtime', {
       ensure => $real_version,
       provider => 'gem',
-    } )
-    }
+    })
   }
 
   file { '/etc/init/scout_realtime.conf':
@@ -95,7 +94,6 @@ class scout_realtime (
     default => Package['scout_realtime'],
   }
 
-  $runstate = $ensure
   service { 'scout_realtime':
     ensure  => $pres_2bool,
     require => [ $require_scout, File['/etc/init/scout_realtime.conf'], ],
