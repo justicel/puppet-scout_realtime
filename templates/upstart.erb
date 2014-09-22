@@ -4,12 +4,13 @@
 start on runlevel [2345]
 stop on runlevel [016]
 
+respawn
+respawn limit 5 30
+
 env PORT='<%= @port %>'
 env LOG_PATH='<%= @log_path %>'
 env PID_PATH='<%= @pid_path %>'
 
 chdir /var/tmp
 
-script
-  exec scout_realtime -p $PORT -l $LOG_PATH -i $PID_PATH -f
-end script
+exec scout_realtime -p $PORT -l $LOG_PATH -i $PID_PATH -f
