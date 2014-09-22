@@ -1,6 +1,6 @@
 {
   "name": "jlondon-scout_realtime",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Justice London",
   "summary": "Scout Realtime Puppet installer",
   "license": "Apache License, Version 2.0",
@@ -8,6 +8,15 @@
   "project_page": "http://github.com/justicel/puppet-scout_realtime",
   "issues_url": "http://github.com/justicel/puppet-scout_realtime/issues",
   "description": "A puppet module which allows you to install and manage Scout Realtime",
+  "tags": [
+    "scout",
+    "top",
+    "statistics",
+    "monitoring",
+    "centos",
+    "debian",
+    "ubuntu"
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
